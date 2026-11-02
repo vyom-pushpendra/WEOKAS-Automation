@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-10-31T17:15:39 IST" name="Default suite" finished-at="2026-10-31T17:16:26 IST" duration-ms="47358">
+    <groups>
+    </groups>
+    <test started-at="2026-10-31T17:15:39 IST" name="Default test" finished-at="2026-10-31T17:16:26 IST" duration-ms="47358">
+      <class name="vYomTestCases.topNavigationTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:vYomTestCases.topNavigationTest@1d296da]" started-at="2026-10-31T17:15:39 IST" name="setup" finished-at="2026-10-31T17:15:40 IST" duration-ms="1188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyTopNavigationBar()[pri:0, instance:vYomTestCases.topNavigationTest@1d296da]" started-at="2026-10-31T17:15:40 IST" name="verifyTopNavigationBar" finished-at="2026-10-31T17:16:26 IST" duration-ms="45843" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTopNavigationBar -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:vYomTestCases.topNavigationTest@1d296da]" started-at="2026-10-31T17:16:26 IST" name="tearDown" finished-at="2026-10-31T17:16:26 IST" duration-ms="293" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- vYomTestCases.topNavigationTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
