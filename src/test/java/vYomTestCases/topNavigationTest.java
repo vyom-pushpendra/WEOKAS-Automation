@@ -11,6 +11,8 @@ import vYomPages.topNavigationPage;
 
 public class topNavigationTest extends BaseClass {
 
+	
+
 	@Test(priority = 1)
 
 	public void login() throws Exception {
@@ -51,32 +53,21 @@ public class topNavigationTest extends BaseClass {
 
 	@Test(priority = 2)
 	public void verifyTopNavigationBarFunctionality() throws InterruptedException {
-
-		topNavigationPage topNavigationBarPage = new topNavigationPage(driver);
-
+		
+		topNavigationPage page = new topNavigationPage(driver);
+		
+		
 		// Notification Icon
-		topNavigationBarPage.clickNotificationIcon();
-		
-		Thread.sleep(1000);
-		
-		topNavigationBarPage.clickMarkAllAsReadIfAvailable();
-		
-		Thread.sleep(1000);
-		// Profile Icon
+		page.clickNotificationIcon();
 
-		topNavigationBarPage.clickProfileIcon();
+		//project verify in Search Bar
 		
-		Thread.sleep(1000);
+		page.verfyEnterSearchText("Test", "Neha");
+		
+		// Profile Icon
+		page.printLogoutPopupTextAndCancel();
+
 		// Search
-		topNavigationBarPage.enterSearchText("Test");
-		
-		Thread.sleep(1000);
-		
-		topNavigationBarPage.enterInvalidProject("Neha");
-		
-		Thread.sleep(1000);
-		
-		
 
 	}
 }
