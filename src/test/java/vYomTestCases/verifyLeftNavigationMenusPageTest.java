@@ -16,31 +16,6 @@ public class verifyLeftNavigationMenusPageTest extends BaseClass {
 
         // Login
 
-//        loginPage loginpage = new loginPage(driver);
-//
-//        loginpage.enterEmail(config.getEmail());
-//
-//        Thread.sleep(3000);
-//
-//        loginpage.clickTerms();
-//
-//        Thread.sleep(2000);
-//
-//        loginpage.clickLogin();
-//
-//        String otp = emailOtpReader.getOTP();
-//
-//        System.out.println("OTP Found : " + otp);
-//
-//        loginpage.enterOTP(otp);
-//
-//        Thread.sleep(2000);
-//
-//        loginpage.clickVerify();
-//
-//        Thread.sleep(5000);
-
-        // Dashboard Page
     	  loginPage loginPage = new loginPage(driver);
 
           // Enter Email

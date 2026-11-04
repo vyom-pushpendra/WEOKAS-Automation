@@ -11,18 +11,7 @@ public class verifyLeftNavigationMenusPage {
 		this.driver = driver;
 	}
 
-//	public boolean isMenuDisplayed(String menuName) {
-//
-//		return driver.findElement(By.xpath("//*[contains(text(),'" + menuName + "')]")).isDisplayed();
-//
-//	}
-//
-//	public void clickMenu(String menuName) {
-//
-//		driver.findElement(By.xpath("//*[contains(text(),'" + menuName + "')]")).click();
-//	}
-//	
-//	
+
 	
 	public boolean isMenuDisplayed(String menuName) {
 

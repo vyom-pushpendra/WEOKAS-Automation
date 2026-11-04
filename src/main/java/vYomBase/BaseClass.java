@@ -7,7 +7,9 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import vYomUtilities.readConfig;
@@ -24,7 +26,9 @@ public class BaseClass {
      protected readConfig config;
      
 
-    @BeforeMethod
+  
+     
+     @BeforeClass
     public void setup() throws IOException {
 
         config = new readConfig();
@@ -40,7 +44,7 @@ public class BaseClass {
         driver.get(config.getUrl());
     }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() {
 
         if(driver != null) {

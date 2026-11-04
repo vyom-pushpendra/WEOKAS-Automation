@@ -12,6 +12,7 @@
 			<class name="vYomTestCases.LoginTest" />
 			<class name="vYomTestCases.verifyLeftNavigationMenusPageTest" />
 			<class name = "vYomTestCases.dashboardPageOnSupportAndHelpTest"/>
+			<class name="vYomTestCases.topNavigationTest"/>
 
 
 

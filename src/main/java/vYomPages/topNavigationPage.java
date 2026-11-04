@@ -2,48 +2,80 @@ package vYomPages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-
-import vYomUtilities.jsUtility;
 import vYomUtilities.waitUtility;
 
 public class topNavigationPage {
 
 	WebDriver driver;
 	waitUtility wait;
-	jsUtility jsUtil;
 
 	public topNavigationPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new waitUtility(driver);
-		this.jsUtil = new jsUtility(driver);
+
 	}
 
-	By notificationIcon = By.xpath("(//button[contains(@class,'justify-center')])[1]");
-	By notificationPanel = By.xpath("//div[@class='max-h-[380px] overflow-y-auto']");
+	// Locators
+	By notificationIcon = By.xpath("(//button[contains(@class,'size-[40px]')])[1]");
 
-	public void clickNotification() throws Exception {
+	By profileIcon = By.xpath("//p[normalize-space()='P']");
 
-		WebElement notification = wait.waitForClickable(notificationIcon);
+	By searchBar = By.xpath("//input[@placeholder='Search projects, members...']");
 
-		// Highlight element
-		jsUtil.highlightElement(notification);
+	By notificationScroll = By.xpath("//p[text()=\"fifth was added to Vyom system.\"]");
 
-		Thread.sleep(1000);
+	By markAllAsRead = By.xpath("//button[text()=\"Mark all as read\"]");
+	
+	By logout  =  By.xpath("//*[normalize-space()='Log Out']");
+	
+	By canelLogout = By.xpath("//button[normalize-space()='Cancel']");
 
-		// JS Click
-		jsUtil.clickElement(notification);
+	// Actions
 
-		System.out.println("Notification Clicked");
+	public void clickNotificationIcon() {
+
+		wait.waitForClickable(notificationIcon).click();
 	}
 
-	public void scrollNotificationPanel() {
+	public void clickProfileIcon() {
 
-		WebElement panel = wait.waitForVisibility(notificationPanel);
-
-		jsUtil.scrollNotificationSlow(panel);
-
-		System.out.println("Notification Panel Scrolled");
+		wait.waitForClickable(profileIcon).click();
+		
+		wait.waitForClickable(logout).click();
+		
+		wait.waitForClickable(canelLogout);
 	}
+
+	public void clickMarkAllAsReadIfAvailable() {
+
+		try {
+
+			if (driver.findElement(markAllAsRead).isDisplayed()) {
+
+				driver.findElement(markAllAsRead).click();
+				System.out.println("Clicked on Mark all as read");
+
+			}
+
+		} catch (Exception e) {
+
+			System.out.println("No mark all as read available");
+
+		}
+	}
+
+	public void enterSearchText(String text) {
+
+		wait.waitForVisibility(searchBar).sendKeys(text);
+
+	}
+
+	public void enterInvalidProject(String projetName) {
+
+		driver.findElement(searchBar).clear();
+
+		wait.waitForVisibility(searchBar).sendKeys(projetName);
+
+	}
+
 }
-

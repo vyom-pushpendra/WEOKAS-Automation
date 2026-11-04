@@ -5,8 +5,8 @@
     <classes>
       <class name="vYomTestCases.topNavigationTest">
         <methods>
+          <include name="verifyTopNavigationBarFunctionality"/>
           <include name="tearDown"/>
-          <include name="verifyTopNavigationBar"/>
           <include name="setup"/>
         </methods>
       </class> <!-- vYomTestCases.topNavigationTest -->
