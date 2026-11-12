@@ -50,5 +50,5 @@ public class BaseClass {
         if(driver != null) {
             driver.quit();
         }
-    }
-}
+    
+}}
