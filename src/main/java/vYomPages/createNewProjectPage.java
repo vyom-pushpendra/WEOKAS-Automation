@@ -5,6 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+
 import vYomUtilities.waitUtility;
 
 public class createNewProjectPage {
@@ -29,28 +31,25 @@ public class createNewProjectPage {
 
 	By project = By.xpath("//button[2]//div[1]//span[2]//span[1]");
 
+	By crossIcon = By.xpath("//p[text()='Add Project']/following::button[1]");
+
+	By projectNameError = By.xpath("//*[text()='Project name is required']");
+
+	By addressError = By.xpath("//*[text()='Address is required']");
+
+	By assignedMemberError = By.xpath("//*[text()='Please select an assigned member']");
+
 	public createNewProjectPage(WebDriver driver) {
 
 		this.driver = driver;
 		this.wait = new waitUtility(driver);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	public void addNewProjectWithValidInputs() throws InterruptedException {
 
 		wait.waitForClickable(addNewProject);
 		driver.findElement(addNewProject).click();
+		System.out.println("Clicking on Add New Project button");
 		Thread.sleep(200);
 
 	}
@@ -131,9 +130,40 @@ public class createNewProjectPage {
 		wait.waitForVisibility(createdProject);
 
 		return driver.findElement(createdProject).isDisplayed();
+
+	}
+
+	public void clickCrossIcon() throws InterruptedException {
+
+		Thread.sleep(200);
+		wait.waitForClickable(crossIcon).click();
+
+		System.out.println("Clicking on Cross Icon");
+
+		Thread.sleep(200);
+
+		System.out.println("Add Project form closed successfully");
+
+	}
+
+	public void addNewProjectWithValidation() {
+
+		System.out.println("Verifying mandatory field validations");
+
+		Assert.assertTrue(driver.findElement(projectNameError).isDisplayed(),
+				"Project Name validation is not displayed");
+
+		Assert.assertTrue(driver.findElement(addressError).isDisplayed(), "Address validation is not displayed");
+
+		Assert.assertTrue(driver.findElement(assignedMemberError).isDisplayed(),
+				"Assigned Member validation is not displayed");
 		
 		
-		
+		System.out.println("Project Name validation verified successfully");
+		System.out.println("Address validation verified successfully");
+		System.out.println("Assigned Member validation verified successfully");
+
+		System.out.println("All mandatory field validations passed successfully");
 	}
 
 }

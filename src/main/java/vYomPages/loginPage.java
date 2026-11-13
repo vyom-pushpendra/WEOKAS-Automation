@@ -63,7 +63,8 @@ public class loginPage extends BaseClass {
 		driver.findElement(verifyButton).click();
 
 		
-
+    System.out.println(" Login successful");
+    System.out.println("Successfully navigate on Home page");
 	
 
 	}

@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="vYomTestCases.createNewProjectTest">
+      <class name="vYomTestCases.projectListingPageTest">
         <methods>
-          <include name="verifyAddNewProjectButton"/>
           <include name="setup"/>
+          <include name="project_list"/>
         </methods>
-      </class> <!-- vYomTestCases.createNewProjectTest -->
+      </class> <!-- vYomTestCases.projectListingPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

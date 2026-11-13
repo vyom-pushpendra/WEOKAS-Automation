@@ -14,6 +14,7 @@
 			<class name = "vYomTestCases.dashboardPageOnSupportAndHelpTest"/>
 			<class name="vYomTestCases.topNavigationTest"/>
 			<class name ="vYomTestCases.createNewProjectTest"/>
+			<class name ="vYomTestCases.addNewProjectWithValidationTest"/>
 
 
 
