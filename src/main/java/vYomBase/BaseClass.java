@@ -37,10 +37,11 @@ public class BaseClass {
 		driver.get(config.getUrl());
 	}
 
-	@AfterClass
-	public void tearDown() {
-
-		if (driver != null) {
-			driver.quit();
-		}
-	}}
+//	@AfterClass
+//	public void tearDown() {
+//
+//		if (driver != null) {
+//			driver.quit();
+//		}
+	//}
+}

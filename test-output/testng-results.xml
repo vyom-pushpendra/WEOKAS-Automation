@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-11-14T11:08:54 IST" name="Default suite" finished-at="2026-11-14T11:10:10 IST" duration-ms="76492">
+  <suite started-at="2026-11-14T16:44:41 IST" name="Default suite" finished-at="2026-11-14T16:45:30 IST" duration-ms="48836">
     <groups>
     </groups>
-    <test started-at="2026-11-14T11:08:54 IST" name="Default test" finished-at="2026-11-14T11:10:10 IST" duration-ms="76492">
-      <class name="vYomTestCases.projectListingPageTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:vYomTestCases.projectListingPageTest@3cd3e762]" started-at="2026-11-14T11:08:54 IST" name="setup" finished-at="2026-11-14T11:08:55 IST" duration-ms="1220" status="PASS">
+    <test started-at="2026-11-14T16:44:41 IST" name="Default test" finished-at="2026-11-14T16:45:30 IST" duration-ms="48836">
+      <class name="vYomTestCases.verifyEditProjectTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:vYomTestCases.verifyEditProjectTest@3b0090a4]" started-at="2026-11-14T16:44:41 IST" name="setup" finished-at="2026-11-14T16:44:42 IST" duration-ms="1344" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="login()[pri:1, instance:vYomTestCases.projectListingPageTest@3cd3e762]" started-at="2026-11-14T11:08:55 IST" name="login" finished-at="2026-11-14T11:09:40 IST" duration-ms="44839" status="PASS">
+        <test-method signature="login()[pri:1, instance:vYomTestCases.verifyEditProjectTest@3b0090a4]" started-at="2026-11-14T16:44:42 IST" name="login" finished-at="2026-11-14T16:45:27 IST" duration-ms="44703" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="project_list()[pri:2, instance:vYomTestCases.projectListingPageTest@3cd3e762]" started-at="2026-11-14T11:09:40 IST" name="project_list" finished-at="2026-11-14T11:10:10 IST" duration-ms="30174" status="PASS">
+        <test-method signature="searchProject()[pri:2, instance:vYomTestCases.verifyEditProjectTest@3b0090a4]" started-at="2026-11-14T16:45:27 IST" name="searchProject" finished-at="2026-11-14T16:45:28 IST" duration-ms="953" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- project_list -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:vYomTestCases.projectListingPageTest@3cd3e762]" started-at="2026-11-14T11:10:10 IST" name="tearDown" finished-at="2026-11-14T11:10:10 IST" duration-ms="218" status="PASS">
+        </test-method> <!-- searchProject -->
+        <test-method signature="clickOnThreeDots()[pri:3, instance:vYomTestCases.verifyEditProjectTest@3b0090a4]" started-at="2026-11-14T16:45:28 IST" name="clickOnThreeDots" finished-at="2026-11-14T16:45:30 IST" duration-ms="1799" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- vYomTestCases.projectListingPageTest -->
+        </test-method> <!-- clickOnThreeDots -->
+      </class> <!-- vYomTestCases.verifyEditProjectTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

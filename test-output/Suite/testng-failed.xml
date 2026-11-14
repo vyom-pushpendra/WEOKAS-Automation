@@ -6,27 +6,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="vYomTestCases.dashboardPageOnSupportAndHelpTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="verifySupportAndHelpMenu"/>
-          <include name="setup"/>
-        </methods>
-      </class> <!-- vYomTestCases.dashboardPageOnSupportAndHelpTest -->
-      <class name="vYomTestCases.verifyLeftNavigationMenusPageTest">
+      <class name="vYomTestCases.verifySearchFileterOnProjectListingTest">
         <methods>
           <include name="tearDown"/>
           <include name="setup"/>
-          <include name="verifyLeftNavigationMenus"/>
+          <include name="verifyValidProjectSearch"/>
         </methods>
-      </class> <!-- vYomTestCases.verifyLeftNavigationMenusPageTest -->
-      <class name="vYomTestCases.LoginTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setup"/>
-          <include name="verifyLogin"/>
-        </methods>
-      </class> <!-- vYomTestCases.LoginTest -->
+      </class> <!-- vYomTestCases.verifySearchFileterOnProjectListingTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

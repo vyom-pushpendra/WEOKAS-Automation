@@ -16,6 +16,7 @@
 			<class name ="vYomTestCases.createNewProjectTest"/>
 			<class name ="vYomTestCases.addNewProjectWithValidationTest"/>
 			<class name ="vYomTestCases.projectListingPageTest"/>
+			<class name = "vYomTestCases.verifySearchFileterOnProjectListingTest"/>
 
 
 

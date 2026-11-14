@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 
 import vYomUtilities.waitUtility;
 
-public class verifyProjectListingPage {
+public class verifySearchFilterOnProjectListingPage {
 
 	WebDriver driver;
 	waitUtility wait;
 
-	public verifyProjectListingPage(WebDriver driver) {
+	public verifySearchFilterOnProjectListingPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new waitUtility(driver);
 

@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="vYomTestCases.projectListingPageTest">
+      <class name="vYomTestCases.verifyEditProjectTest">
         <methods>
-          <include name="tearDown"/>
-          <include name="login"/>
           <include name="setup"/>
-          <include name="project_list"/>
+          <include name="clickOnThreeDots"/>
+          <include name="searchProject"/>
         </methods>
-      </class> <!-- vYomTestCases.projectListingPageTest -->
+      </class> <!-- vYomTestCases.verifyEditProjectTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
