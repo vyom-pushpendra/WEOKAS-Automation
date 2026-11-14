@@ -58,12 +58,10 @@ public class projectListingPageTest extends BaseClass {
 		project.click_projects_menu();
 
 		project.get_project();
-		
+
 		project.serchAndVerify();
-		
-		project.clcikOnFilters();
-		
-	
+
+		project.verifyFilters();
 
 	}
 

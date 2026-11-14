@@ -15,6 +15,7 @@
 			<class name="vYomTestCases.topNavigationTest"/>
 			<class name ="vYomTestCases.createNewProjectTest"/>
 			<class name ="vYomTestCases.addNewProjectWithValidationTest"/>
+			<class name ="vYomTestCases.projectListingPageTest"/>
 
 
 

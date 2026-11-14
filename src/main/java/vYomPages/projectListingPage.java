@@ -5,6 +5,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -21,6 +22,10 @@ public class projectListingPage {
 	By search = By.xpath("//input[@placeholder='Search projects, members...']");
 	By clcokOnFilters = By.xpath("//span[normalize-space()='Filters']");
 	By search1 = By.xpath("//input[@placeholder='Search project']");
+
+	By categoryList = By.xpath("//span[@class='text-[13px] text-[#5c7089]']");
+	By checkBoxList = By.xpath("//button[@role='checkbox']");
+	By cancelButton = By.xpath("//button[text()='Cancel']");
 
 	public projectListingPage(WebDriver driver) {
 
@@ -82,16 +87,73 @@ public class projectListingPage {
 
 	}
 
-	public void clcikOnFilters() throws InterruptedException {
+//	public void clickOnFilters() throws InterruptedException {
+//
+//		wait.waitForClickable(clcokOnFilters).click();
+//
+//		Thread.sleep(200);
+//
+//		// span[@class="text-[13px] text-[#5c7089]"]
 
-		wait.waitForClickable(clcokOnFilters).click();
-		
-		
-		
+//	}
 
+	public void verifyFilters() throws InterruptedException {
+
+	    wait.waitForClickable(clcokOnFilters).click();
+	    Thread.sleep(1000);
+
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+	    // Assigned SI (Default Open)
+	    List<WebElement> checkBoxes = driver.findElements(checkBoxList);
+
+	    for (int i = 0; i < checkBoxes.size(); i++) {
+
+	        checkBoxes = driver.findElements(checkBoxList);
+
+	        js.executeScript("arguments[0].scrollIntoView(true);", checkBoxes.get(i));
+	        js.executeScript("arguments[0].click();", checkBoxes.get(i)); // Check
+
+	        Thread.sleep(500);
+
+	        checkBoxes = driver.findElements(checkBoxList);
+
+	        js.executeScript("arguments[0].click();", checkBoxes.get(i)); // Uncheck
+
+	        Thread.sleep(500);
+	    }
+
+	    // Assigned Member & Project Information
+	    List<WebElement> categories = driver.findElements(categoryList);
+
+	    for (int i = 0; i < categories.size(); i++) {
+
+	        categories = driver.findElements(categoryList);
+
+	        js.executeScript("arguments[0].click();", categories.get(i));
+
+	        Thread.sleep(1000);
+
+	        checkBoxes = driver.findElements(checkBoxList);
+
+	        for (int j = 0; j < checkBoxes.size(); j++) {
+
+	            checkBoxes = driver.findElements(checkBoxList);
+
+	            js.executeScript("arguments[0].scrollIntoView(true);", checkBoxes.get(j));
+	            js.executeScript("arguments[0].click();", checkBoxes.get(j)); // Check
+
+	            Thread.sleep(500);
+
+	            checkBoxes = driver.findElements(checkBoxList);
+
+	            js.executeScript("arguments[0].click();", checkBoxes.get(j)); // Uncheck
+
+	            Thread.sleep(500);
+	        }
+	    }
+
+	    wait.waitForClickable(cancelButton).click();
 	}
-	
-	
-	
 
 }
