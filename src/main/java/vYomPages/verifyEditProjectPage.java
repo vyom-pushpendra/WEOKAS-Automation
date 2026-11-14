@@ -30,7 +30,7 @@ public class verifyEditProjectPage {
 
 	By address = By.xpath("//input[@placeholder='Enter address']");
 
-	By email = By.xpath("//input[@placeholder='Enter address']");
+	By email = By.xpath("//input[@placeholder='abc@xyz.com']");
 
 	By name = By.xpath("//input[@placeholder='Enter name']");
 	
@@ -46,6 +46,10 @@ public class verifyEditProjectPage {
 			"//*[normalize-space()='Testing user']" + "/ancestor::div[.//button[contains(@class,'size-[32px]')]][1]"
 					+ "//button[contains(@class,'size-[32px]')]");
 
+	
+	By mobile = By.xpath("//input[@placeholder='00000 00000']");
+	
+	
 	public void editProject() throws InterruptedException {
 
 		String projectName = "Testing User";
@@ -88,6 +92,7 @@ public class verifyEditProjectPage {
 	}
 
 
+
 public void updateProjectDetails() {
 
     Random random = new Random();
@@ -105,7 +110,7 @@ public void updateProjectDetails() {
         "City Hospital", "Shiv Temple"
     };
 
-    // Generate Random Test Data
+    // Generate Random Data
     String addressValue =
         cities[random.nextInt(cities.length)];
 
@@ -133,25 +138,50 @@ public void updateProjectDetails() {
     nameField.clear();
     nameField.sendKeys(nameValue);
 
-    // Enter Owner Email
-    WebElement emailField = wait.waitForClickable(email);
+    // Scroll to Email Field
+    WebElement emailField = wait.waitForVisibility(email);
+
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+
+    js.executeScript(
+        "arguments[0].scrollIntoView({block:'center'});",
+        emailField
+    );
+
+    // Enter Email
+    emailField = wait.waitForClickable(email);
     emailField.clear();
     emailField.sendKeys(emailValue);
+    
+    //update mobile number 
+    
+ // Generate Random 10 Digit Mobile Number
+    long randomNumber = 1000000000L
+            + (long)(Math.random() * 9000000000L);
 
-    // Click Save Project
-    
-    wait.waitForVisibility(saveProject);
-    
-    wait.waitForClickable(saveProject).click();
+    String mobileValue = String.valueOf(randomNumber);
+
+    // Clear old mobile number and enter new number
+    WebElement mobileField = wait.waitForClickable(mobile);
+    mobileField.clear();
+    mobileField.sendKeys(mobileValue);
+
+    System.out.println("Mobile Number: " + mobileValue);
     
 
-    System.out.println("Address: " + addressValue);
+    // Click Update Project
+//   WebElement updateButton = wait.waitForClickable(saveProject);
+//    updateButton.click();
+
+    // Print Updated Data
+    System.out.println("City: " + addressValue);
     System.out.println("Landmark: " + landmarkValue);
     System.out.println("Owner Name: " + nameValue);
     System.out.println("Owner Email: " + emailValue);
 
     System.out.println("Project Updated Successfully");
 }
+
 
 
 }
