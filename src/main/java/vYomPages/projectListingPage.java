@@ -87,26 +87,6 @@ public class projectListingPage {
 		wait.waitForClickable(clcokOnFilters).click();
 		
 		
-		List<String> xpathList = Arrays.asList(
-			    "//*[normalize-space()='Assigned SI']",
-			    "//*[normalize-space()='Assigned Member']",
-			    "//*[normalize-space()='Project Information']"
-			);
-
-			for (String xpath : xpathList) {
-
-			    WebElement element = wait.until(
-			        ExpectedConditions.elementToBeClickable(
-			            By.xpath(xpath)
-			        )
-			    );
-
-			    element.click();
-
-			    System.out.println("Clicked successfully: " + xpath);
-
-			    Thread.sleep(1000);
-			}
 		
 
 	}
