@@ -65,7 +65,7 @@ public class verifyEditProjectTest extends BaseClass {
 
 	@Test(priority = 3)
 
-	public void clickOnThreeDots() {
+	public void clickOnThreeDots() throws InterruptedException {
 
 		verifyEditProjectPage editProject = new verifyEditProjectPage(driver);
 

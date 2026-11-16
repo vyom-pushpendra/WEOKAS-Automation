@@ -84,9 +84,10 @@ public class verifyEditProjectPage {
 		throw new RuntimeException("Unable to click Three Dots button");
 	}
 
-	public void clickOnEditButton() {
+	public void clickOnEditButton() throws InterruptedException {
 
 		wait.waitForVisibility(edit);
+		Thread.sleep(200);
 		wait.waitForClickable(edit).click();
 
 	}
