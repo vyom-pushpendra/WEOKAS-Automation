@@ -51,10 +51,25 @@ public class waitUtility {
         return wait.until(
                 ExpectedConditions.titleContains(title));
     }
+    
+    
+    // wait 
 
+    public void waitForSeconds(long seconds) {
 
-	public WebElement until(ExpectedCondition<WebElement> elementToBeClickable) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public boolean waitForTextPresent(By locator, String text) {
+
+        return wait.until(
+                ExpectedConditions.textToBePresentInElementLocated(
+                        locator,
+                        text));
+    }
+	
 }

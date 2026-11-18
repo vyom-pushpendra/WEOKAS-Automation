@@ -8,6 +8,7 @@
     <classes>
       <class name="vYomTestCases.verifySearchFileterOnProjectListingTest">
         <methods>
+          <include name="tearDown"/>
           <include name="setup"/>
           <include name="verifyValidProjectSearch"/>
         </methods>

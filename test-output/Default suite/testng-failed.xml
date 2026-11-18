@@ -3,13 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="vYomTestCases.verifySearchFileterOnProjectListingTest">
+      <class name="vYomTestCases.MemberTest">
         <methods>
-          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="verifyValidProjectSearch"/>
+          <include name="createEditDeleteMemberTest"/>
         </methods>
-      </class> <!-- vYomTestCases.verifySearchFileterOnProjectListingTest -->
+      </class> <!-- vYomTestCases.MemberTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
