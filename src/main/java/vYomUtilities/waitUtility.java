@@ -71,5 +71,13 @@ public class waitUtility {
                         locator,
                         text));
     }
+
+
+	public WebElement waitForClickable(WebElement element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
 	
 }

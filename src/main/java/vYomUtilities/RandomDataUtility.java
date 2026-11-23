@@ -92,4 +92,15 @@ public class RandomDataUtility {
         return "Sector " + random.nextInt(100)
                 + ", Gurgaon, Haryana";
     }
+    
+    //Random Role Name
+    
+ // Random Role Name
+    public static String getRandomRoleName() {
+
+        return "Testing" +
+                UUID.randomUUID().toString().substring(0, 8);
+    }
+    
+    
 }
