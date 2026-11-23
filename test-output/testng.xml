@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+	<listeners>
+		<listener class-name="vYomUtilities.testListener" />
+	</listeners>
+
+	<test thread-count="5" name="Test">
+		<classes>
+			<class name="vYomTestCases.LoginTest" />
+			<class name="vYomTestCases.verifyLeftNavigationMenusPageTest" />
+			<class name = "vYomTestCases.dashboardPageOnSupportAndHelpTest"/>
+			<class name="vYomTestCases.topNavigationTest"/>
+			<class name ="vYomTestCases.createNewProjectTest"/>
+			<class name ="vYomTestCases.addNewProjectWithValidationTest"/>
+			<class name ="vYomTestCases.projectListingPageTest"/>
+			<class name = "vYomTestCases.verifySearchFileterOnProjectListingTest"/>
+			<class name = "vYomTestCases.verifyEditProjectTest"/>
+			<clsss name = "vYomTestCases.verifySearchFileterOnProjectListingTest"/>
+			<class name = "vYomTestCases.LoginTest"/>
+			
+
+
+
+		</classes>
+	</test>
+
+</suite>

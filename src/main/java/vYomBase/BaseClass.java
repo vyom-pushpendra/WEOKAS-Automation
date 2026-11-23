@@ -16,39 +16,32 @@ import vYomUtilities.readConfig;
 
 public class BaseClass {
 
-	
-	
-	/////remove this line
-    /////public WebDriver driver;
+	///// remove this line
+	///// public WebDriver driver;
 	public static WebDriver driver;
-	
-	////use only protected 
-     protected readConfig config;
-     
 
-  
-     
-     @BeforeClass
-    public void setup() throws IOException {
+	//// use only protected
+	protected readConfig config;
 
-        config = new readConfig();
+	@BeforeClass
+	public void setup() throws IOException {
 
-        driver = new ChromeDriver();
+		config = new readConfig();
 
-        driver.manage().window().maximize();
+		driver = new ChromeDriver();
 
-        driver.manage()
-              .timeouts()
-              .implicitlyWait(Duration.ofSeconds(10));
+		driver.manage().window().maximize();
 
-        driver.get(config.getUrl());
-    }
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-    @AfterClass
+		driver.get(config.getUrl());
+	}
+
+	@AfterClass
     public void tearDown() {
 
-        if(driver != null) {
-            driver.quit();
-        }
-    
-}}
+		if (driver != null) {
+			driver.quit();
+		}
+	}
+}

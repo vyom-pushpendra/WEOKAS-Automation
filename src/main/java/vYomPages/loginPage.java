@@ -3,6 +3,7 @@ package vYomPages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
+import org.testng.Assert;
 
 import vYomBase.BaseClass;
 import vYomUtilities.waitUtility;
@@ -63,7 +64,22 @@ public class loginPage extends BaseClass {
 		driver.findElement(verifyButton).click();
 
 		
+    System.out.println(" Login successful");
+    System.out.println("Successfully navigate on Home page");
+    
+ // Get actual page title
+    String actualTitle = driver.getTitle();
 
+    
+        // Expected home page title
+    String expectedTitle = "Signature";
+
+    // Verify title
+    Assert.assertEquals(actualTitle, expectedTitle,
+            "Home Page title is not matching!");
+    
+    
+    System.out.println("Welcome to the Home Page "+">>>>>>>>>>>>>>>>>>>>"+ expectedTitle +"<<<<<<<<<<<<<<<<<<<<<");
 	
 
 	}

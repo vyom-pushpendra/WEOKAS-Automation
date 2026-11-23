@@ -7,6 +7,7 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -50,4 +51,33 @@ public class waitUtility {
         return wait.until(
                 ExpectedConditions.titleContains(title));
     }
+    
+    
+    // wait 
+
+    public void waitForSeconds(long seconds) {
+
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public boolean waitForTextPresent(By locator, String text) {
+
+        return wait.until(
+                ExpectedConditions.textToBePresentInElementLocated(
+                        locator,
+                        text));
+    }
+
+
+	public WebElement waitForClickable(WebElement element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
 }

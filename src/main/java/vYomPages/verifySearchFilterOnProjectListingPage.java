@@ -8,12 +8,12 @@ import org.openqa.selenium.WebElement;
 
 import vYomUtilities.waitUtility;
 
-public class verifyProjectListingPage {
+public class verifySearchFilterOnProjectListingPage {
 
 	WebDriver driver;
 	waitUtility wait;
 
-	public verifyProjectListingPage(WebDriver driver) {
+	public verifySearchFilterOnProjectListingPage(WebDriver driver) {
 		this.driver = driver;
 		this.wait = new waitUtility(driver);
 
@@ -36,6 +36,8 @@ public class verifyProjectListingPage {
 	By applyFiltersButton = By.xpath("//button[contains(.,'Apply Filters')]");
 	By cancelButton = By.xpath("//button[contains(.,'Cancel')]");
 	By clearAllButton = By.xpath("//*[contains(text(),'Clear All')]");
+
+	By projectNotFound = By.xpath("//p[text()=\"No results found\"]");
 
 	public void clickOnProjectOnHomePage() {
 
@@ -90,6 +92,7 @@ public class verifyProjectListingPage {
 
 		System.out.println("Project  Found : " + expectedProject);
 		return false;
+
 	}
 
 	public void searchAndPrintProject(String projectName) {
@@ -119,20 +122,17 @@ public class verifyProjectListingPage {
 
 	public void searchInvalidProject(String projectName) {
 
-		searchProject(projectName);
+	    searchProject(projectName);
 
-		List<WebElement> rows = driver.findElements(projectList);
+	    if (driver.findElement(projectNotFound).isDisplayed()) {
 
-		if (rows.isEmpty()) {
+	        System.out.println("Project Not Found : " + projectName);
 
-			System.out.println("Project Not Found : " + projectName);
+	    } else {
 
-		} else {
-
-			System.out.println("Unexpected Project Found");
-		}
+	        System.out.println("Unexpected Project Found");
+	    }
 	}
-
 	public void verifyFilters() {
 
 		wait.waitForClickable(filterButton).click();
